@@ -28,7 +28,8 @@ public class PipelineStepTest {
 
 		Assert.assertEquals("SimpleStep", step.getStepIdentifier());
 
-		step.process(pipelineContext, monitor);
+		ExecutionContext executionContext = new ExecutionContext();
+		step.process(pipelineContext, monitor, executionContext);
 
 		Assert.assertEquals(Integer.valueOf(22), pipelineContext.get(1));
 		Assert.assertEquals(1, monitor.getNotifications().size());
@@ -42,8 +43,7 @@ public class PipelineStepTest {
 		}
 
 		public void process(Map<Integer, Integer> pipelineContext,
-				NotificationMonitor monitor) {
-
+				NotificationMonitor monitor, IExecutionContext executionContext) {
 			pipelineContext.put(1, 22);
 
 			monitor.addNotification(new Notification("TestStep",

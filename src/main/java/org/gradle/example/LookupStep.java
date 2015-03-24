@@ -2,6 +2,7 @@ package org.gradle.example;
 
 import java.util.Map;
 
+import org.gradle.IExecutionContext;
 import org.gradle.IPipelineStep;
 import org.gradle.Notification;
 import org.gradle.Notification.NotificationTypeEnum;
@@ -22,6 +23,12 @@ public class LookupStep implements IPipelineStep<TestPipelineEnum, Object> {
 			monitor.addNotification(new Notification(getStepIdentifier(),
 					NotificationTypeEnum.ERROR, "This is an invalid sku"));
 		}
+
+	}
+
+	public void process(Map<TestPipelineEnum, Object> pipelineContext,
+			NotificationMonitor monitor, IExecutionContext executionContext) {
+		// TODO Auto-generated method stub
 
 	}
 

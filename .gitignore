@@ -1,5 +1,6 @@
 /build/
 
+
 .DS_Store
 .springBeans
 
@@ -11,3 +12,7 @@
 /.gradle/
 
 /bin/
+
+
+.settings/
+

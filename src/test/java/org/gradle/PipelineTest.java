@@ -110,7 +110,7 @@ public class PipelineTest {
 		}
 
 		public void process(Map<String, String> pipelineContext,
-				NotificationMonitor monitor) {
+				NotificationMonitor monitor, IExecutionContext executionContext) {
 			// TODO Auto-generated method stub
 
 		}

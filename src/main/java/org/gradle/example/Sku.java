@@ -5,28 +5,39 @@ import java.io.Serializable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public class Product implements Serializable {
+public class Sku implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String sku;
+	private String skuId;
+
+	private double price;
 
 	public String toString() {
 		ToStringBuilder sb = new ToStringBuilder(this,
 				ToStringStyle.MULTI_LINE_STYLE);
 
-		sb.append("sku", sku);
+		sb.append("skuId", skuId);
+		sb.append("price", price);
 
 		return sb.toString();
 
 	}
 
-	public String getSku() {
-		return sku;
+	public String getSkuId() {
+		return skuId;
 	}
 
-	public void setSku(String sku) {
-		this.sku = sku;
+	public void setSkuId(String skuId) {
+		this.skuId = skuId;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 }
